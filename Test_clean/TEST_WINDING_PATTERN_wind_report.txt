@@ -1,0 +1,34 @@
+ WINDING SUMMARY REPORT >>>> TEST_WINDING_PATTERN_wind_report.txt
+ DATE:                  >>>> 10-MAR-26   16:19:01
+ USER:                  >>>> naina
+--------------------------------------------------
+Ref Number: 1
+Pay File test_winding_pattern001.pay
+Cover Factor: 1.0000
+Wind Time: 45.34
+Fibre Length:       120.6389E+03
+Mass Fibre: 96.5
+Mass Resin: 39.3
+--------------------------------------------------
+Ref Number: 2
+Pay File test_winding_pattern002.pay
+Cover Factor: 1.0001
+Wind Time: 401.59
+Fibre Length:       424.2455E+03
+Mass Fibre: 339.4
+Mass Resin: 138.3
+--------------------------------------------------
+Ref Number: 3
+Pay File test_winding_pattern003.pay
+Cover Factor: 1.0000
+Wind Time: 44.89
+Fibre Length:       119.4415E+03
+Mass Fibre: 95.6
+Mass Resin: 38.9
+--------------------------------------------------
+--------------------------------------------------
+Number of Programs: 3
+Total Fibre Length:       664.3258E+03
+Total Wind Time: 491.82
+Total Mass Fibre: 531.5
+Total Mass Resin: 216.5

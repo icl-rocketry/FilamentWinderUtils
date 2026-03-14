@@ -1,0 +1,3 @@
+test_winding_pattern001.th2,1,1
+test_winding_pattern002.th2,1,1
+test_winding_pattern003.th2,1,1
