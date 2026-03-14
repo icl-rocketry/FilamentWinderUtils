@@ -2,6 +2,21 @@ import re
 
 text = "testing..."
 
+printer_config = [
+    "M201 ___" #set move limits
+    "M203 __" #feed rate limits
+    "M204" #starting accel
+    "M205" #jerk limits, other advanced settings etc
+
+]
+
+printer_startup =[
+    "M17" #enable stepper
+    "G28" # auto home
+]
+
+
+
 
 rules = [
 
