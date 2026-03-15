@@ -12,7 +12,7 @@ printer_config = [
 
 printer_startup =[
     "M17" #enable stepper
-    "G28" # auto home
+    "G28 X Y J" # auto home all axis EXCEPT mandrel
 ]
 
 
