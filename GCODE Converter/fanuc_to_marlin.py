@@ -1,11 +1,39 @@
 import re
 
-text = "testing..."
+gcode = "testing..."
+
+printer_config = [
+    "M201 ___  ;set move limits", 
+    "M203 __ ;feed rate limits",
+    "M204 ;starting accel", 
+    "M205 ;jerk limits, other advanced settings etc",
+    " ;power loss recovery"
+
+]
+
+printer_startup =[
+    "M17 ;enable stepper", #
+    "G28 X Y B ;auto home all axis EXCEPT mandrel", # 
+
+    " ;move to the start position"  
+    
+]
+
+
+printer_ready =[
+    "M118 Attach filament to mandrel, M24 to resume",
+    "M25" # pause SD print
+]
+
+start_commands = printer_config + printer_startup + printer_ready
+print(start_commands)
+
+start_commands_str = '\n'.join(start_commands)
 
 
 rules = [
 
-    (r"o^.*o\d.*\n?", ";deleted o1 line") # delete any line that has o->number in it
+    (r"o^.*o\d.*\n?", ";deleted o1 line"), # delete any line that has o->number in it
 
     (r"^N\d+ F", "G1"),  # replace index with G1 only when there is an F
 
@@ -21,12 +49,12 @@ rules = [
     (r"G91", "G91"),  # relative positioning maps over
     (r"G64", ""),     # blend mode doesn't exist in marlin?
 
-    (r"M00", "M0")  # stop command is M0 in marlin
-    (r"G01", "")  # swtich linear interpolate with blank space since marlin doesnt have it
+    (r"M00", "M0"),  # stop command is M0 in marlin
+    (r"G01", ""), # swtich linear interpolate with blank space since marlin doesnt have it
 
 
 
-    (r"", "")
+    (r"", ""),
 
 
     #### FINAL EDITS ####
@@ -34,4 +62,8 @@ rules = [
 
 ]
 
-result = re.sub(r'^N\d+', 'G1', text, flags=re.MULTILINE)
+#for rule in rules:
+#    gcode = re.sub(rule[0], rule[1], gcode, flags=re.MULTILINE)
+
+
+print(start_commands_str)
